@@ -29,12 +29,15 @@ function initializeClock(id, endtime) {
     secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
 
     if (t.total <= 0) {
+      location.reload();
       clearInterval(timeinterval);
+      
     }
   }
 
   updateClock();
   var timeinterval = setInterval(updateClock, 1000);
+  
 }
 
 var deadline = new Date("May 17, 2017 20:00:00");
